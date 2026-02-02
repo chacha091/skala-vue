@@ -21,7 +21,7 @@
 import { ref } from 'vue';
 
 const newComment = ref('');
-const comments = ref([]);
+const comments = ref([]);   // 빈 배열
 const nextId = ref(1);
 
 const addComment = () => {
@@ -30,8 +30,13 @@ const addComment = () => {
     return;
   }
 
+  // comments가 3개 이상일 때는 앞부분부터 제거 --> 3개만 유지
+  if (comments.value.length >= 3) {
+    comments.value.shift();
+  }
+
   // 새 댓글 추가
-  comments.value.push({
+  comments.value.push({   //ref 선언은 .value 사용
     id: nextId.value++,
     text: newComment.value
   });

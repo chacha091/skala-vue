@@ -1,10 +1,10 @@
 <template>
   <h2>객체 렌더링</h2>
-  <ul>
-    <li v-for="(value, key, index) in userInfo" :key="key">
-      {{ index + 1 }}. {{ key }}: {{ value }}
+  <ol>
+    <li v-for="(value, key) in userInfo" :key="key">
+      {{ key }}: {{ value }}
     </li>
-  </ul>
+  </ol>
 </template>
 
 <script setup>

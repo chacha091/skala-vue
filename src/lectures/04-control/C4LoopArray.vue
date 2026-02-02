@@ -2,7 +2,7 @@
   <div>
     <h2>국가 목록</h2>
     <ul>
-      <li v-for="item in items" :key="item.code">{{ item.name }}</li>
+      <li v-for="item in items" :key="item.code">{{ item.name }} ({{ item.code }})</li>
     </ul>
   </div>
 </template>

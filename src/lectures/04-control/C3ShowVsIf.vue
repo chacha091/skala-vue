@@ -1,7 +1,9 @@
 <template>
   <button @click="toggle">Toggle View</button>
-  <div v-if="visible">👀 v-if로 렌더링된 박스</div>
-  <div v-show="visible">🙈 v-show로 렌더링된 박스</div>
+  <div v-clock>
+    <div v-if="visible">👀 v-if로 렌더링된 박스 {{ visible }}</div>
+    <div v-show="visible">🙈 v-show로 렌더링된 박스 {{ visible }}</div>
+  </div>
 </template>
 
 <script setup>
@@ -15,6 +17,9 @@ function toggle() {
 </script>
 
 <style scoped>
+[v-clock] {
+  display: none;
+}
 div {
   margin-top: 10px;
   padding: 10px;

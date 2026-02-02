@@ -13,8 +13,10 @@ import { ref } from 'vue'
 
 const count = ref(0)
 
+console.log(count)
+
 function handleClick() {
-  count.value++
+  count.value++   //.value는 script 안에서만 사용
 }
 
 </script>

@@ -19,7 +19,7 @@ const eventInput = ref('')
 const eventKey = ref('')
 
 function handleInput(event) {
-  eventInput.value = `event.target.value: ${event.target.value} `
+  eventInput.value = `event.target.value: ${event.target.value}`
 }
 
 function handleKeyDown(event) {
