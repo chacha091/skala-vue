@@ -1,10 +1,14 @@
 <template>
   <div class="parent">
-    <h2>홍판서네 자식들</h2>
+    <h2>흥부네 자식들</h2>
 
     <section class="children">
-      <HongsChild name="홍길동" :assets="assets.forSon" @money="takeMoney" />
-      <HongsChild name="홍길순" :assets="assets.forDaughter" @money="takeMoney" />
+      <HongsChild
+        v-for="child in children"
+        :name="child.name"
+        :assets="child.assets"
+        @money="takeMoney"
+      />
     </section>
 
     <section class="result">
@@ -23,10 +27,18 @@
 import { computed, ref } from "vue";
 import HongsChild from "./HongsChild.vue";
 
-const assets = {
-  forSon: ["칼", "창"],
-  forDaughter: ["기와집", "전답"],
-};
+const children = [
+  { name: "첫째", assets: ["이불", "양말"] },
+  { name: "둘째", assets: ["밥그릇", "대야"] },
+  { name: "셋째", assets: ["솥", "부뚜막"] },
+  { name: "넷째", assets: ["짚신", "멜빵"] },
+  { name: "다섯째", assets: ["항아리", "바가지"] },
+  { name: "여섯째", assets: ["쌀", "보리"] },
+  { name: "일곱째", assets: ["상", "의자"] },
+  { name: "여덟째", assets: ["모자", "두루마기"] },
+  { name: "아홉째", assets: ["자루", "호미"] },
+  { name: "열째", assets: ["빗자루", "걸레"] },
+];
 
 const logs = ref([]); // { from: string, amount: number }[]
 

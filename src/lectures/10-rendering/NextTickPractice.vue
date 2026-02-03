@@ -11,13 +11,28 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { nextTick, ref } from 'vue'
 
 const isVisible = ref(false)
 const inputRef = ref(null)
 
-function showInputBox() {
+async function showInputBox() {
   isVisible.value = true
+
+  await nextTick()
   inputRef.value.focus()
+  // setTimeout(() => {
+  //   inputRef.value.focus()
+  // }, 100)
 }
 </script>
+
+<style scoped>
+  input{
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+}
+</style>
